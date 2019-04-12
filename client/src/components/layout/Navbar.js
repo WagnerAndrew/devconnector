@@ -18,6 +18,11 @@ class Navbar extends Component {
     const authLinks = (
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item'>
+          <Link className='nav-link' to='/dashboard'>
+            Dashboard
+          </Link>
+        </li>
+        <li className='nav-item'>
           <button
             style={{
               background: 'transparent',
@@ -46,13 +51,11 @@ class Navbar extends Component {
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item'>
           <Link className='nav-link' to='/register'>
-            {' '}
             Sign Up
           </Link>
         </li>
         <li className='nav-item'>
           <Link className='nav-link' to='/login'>
-            {' '}
             Login
           </Link>
         </li>
@@ -77,7 +80,6 @@ class Navbar extends Component {
             <ul className='navbar-nav mr-auto'>
               <li className='nav-item'>
                 <Link className='nav-link' to='/profiles'>
-                  {' '}
                   Developers
                 </Link>
               </li>
