@@ -45,12 +45,12 @@ router.get('/:id', (req, res) => {
 
 // @route   POST api/posts
 // @desc    Create post
-// @access  Public
+// @access  Private
 router.post(
   '/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const { erros, isValid } = validatePostInput(req.body);
+    const { errors, isValid } = validatePostInput(req.body);
 
     // Check Validation
     if (!isValid) {
@@ -124,7 +124,7 @@ router.post(
 );
 
 // @route   POST api/posts/unlike/:id
-// @desc    Unike post
+// @desc    Unlike post
 // @access  Private
 router.post(
   '/unlike/:id',
@@ -147,7 +147,7 @@ router.post(
             .map(item => item.user.toString())
             .indexOf(req.user.id);
 
-          // Splice out of arrary
+          // Splice out of array
           post.likes.splice(removeIndex, 1);
 
           // Save
